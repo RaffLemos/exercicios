@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Prof Roger Bassan | 01</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+        }
+
+        .box-nav {
+            background-color: gold;
+            padding: 5px;
+            border-radius: 15px;
+        }
+
+        .box {
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px;
+            border-radius: 15px;
+            color: white;
+        }
+
+        input {
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            font-size: 15px;
+            width: 50%;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            outline: none;
+            width: 50%;
+            background-color: slateblue;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        button:hover {
+            background-color: cornflowerblue;
+        }
+
+        #texto {
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-nav">
+        <h1>EXERCÍCIO #01</h1>
+        <h2>Disciplina de Algoritmos</h2>
+    </div>
+    <div class="box">
+        <p></p>
+        <select type="option" id='numr' placeholder="escolha um número">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <br><br>
+        <button onclick="go()">Enviar</button>
+    </div>
+
+    <script>
+        function go() {
+            var num = parseInt(document.querySelector('#numr').value);
+
+            if (num >= 1 && num <= 10) {
+                console.log(`Essa é a tabuada do ${num}:`);
+                for (var x = 1; x <= 10; x++) {
+                    var resultado = num * x;
+                    console.log(`${num} x ${x} = ${resultado}`)
+                }
+            } else {
+                console.log("numero invalido.")
+            }
+        }
+    </script>
+</body>
+
+</html>
