@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Prof Roger Bassan | 01</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+        }
+
+        .box-nav {
+            background-color: gold;
+            padding: 5px;
+            border-radius: 15px;
+        }
+
+        .box {
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px;
+            border-radius: 15px;
+            color: white;
+        }
+
+        input {
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            font-size: 15px;
+            width: 50%;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            outline: none;
+            width: 50%;
+            background-color: slateblue;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        button:hover {
+            background-color: cornflowerblue;
+        }
+
+        #texto {
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-nav">
+        <h1>EXERCÍCIO #01</h1>
+        <h2>Disciplina de Algoritmos</h2>
+    </div>
+    <div class="box">
+        <p></p>
+        <input type="number" id='numr1' placeholder="escolha um número">
+        <input type="number" id='numr2' placeholder="escolha um número">
+        </select>
+        <br><br>
+        <button onclick="go()">Enviar</button>
+    </div>
+
+    <script>
+        function go() {
+            var num1 = parseInt(document.querySelector('#numr1').value);
+            var num2 = parseInt(document.querySelector('#numr2').value);
+
+            var par = 0;
+            var impar = 0;
+
+            if (num1 > num2) {
+                var temp = num1;
+                num1 = num2
+                num2 = temp;
+            }
+
+            for (var i = num1 + 1; i < num2; i++) {
+                if (i % 2 === 0) {
+                    par++;
+                } else {
+                    impar++;
+                }
+            }
+
+            console.log(`Essa é a quantidade de numeros impares: ${impar}`);
+            console.log(`Essa é a quantidade de numeros pares: ${par}`);
+        }
+    </script>
+</body>
+
+</html>
